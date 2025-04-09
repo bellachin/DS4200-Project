@@ -135,6 +135,13 @@ transition: color 0.3s;
   border-radius: 5px;
 }
 
+.dashboard-sidebar img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+}
+
 .content {
 flex-grow: 1;
 padding: 20px;
