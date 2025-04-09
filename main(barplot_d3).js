@@ -7,7 +7,7 @@ let margin = {
   left: 60
 };
 
-let svg = d3.select('body')
+let svg = d3.select('#bar-chart')
   .append('svg')
   .attr('width', width)
   .attr('height', height)
@@ -16,20 +16,17 @@ let svg = d3.select('body')
 d3.csv("car_price_dataset.csv").then(raw => {
   console.log("CSV Sample Row:", raw[0]);
 
-  // Clean and extract numeric prices
   let prices = raw.map(d => {
     let val = d.price || d.Price || d.car_price;
     return +String(val).replace(/[^\d.]/g, '');
   }).filter(d => !isNaN(d));
 
-  // Create histogram bins using D3
   let binGenerator = d3.bin()
     .domain(d3.extent(prices))
     .thresholds(8); 
 
   let bins = binGenerator(prices);
 
-  // Scales
   let xscale = d3.scaleLinear()
     .domain([bins[0].x0, bins[bins.length - 1].x1])
     .range([margin.left, width - margin.right]);
@@ -39,17 +36,14 @@ d3.csv("car_price_dataset.csv").then(raw => {
     .nice()
     .range([height - margin.bottom, margin.top]);
 
-  // Y Axis
   svg.append('g')
     .call(d3.axisLeft(yscale))
     .attr('transform', `translate(${margin.left}, 0)`);
 
-  // X Axis
   svg.append('g')
     .call(d3.axisBottom(xscale).tickFormat(d3.format("$.2s")))
     .attr('transform', `translate(0, ${height - margin.bottom})`);
 
-  // Labels
   svg.append('text')
     .text('Car Price')
     .attr('x', width / 2)
@@ -65,7 +59,6 @@ d3.csv("car_price_dataset.csv").then(raw => {
     .attr('text-anchor', 'middle')
     .style('font-weight', 'bold');
 
-  // Bars
   svg.selectAll('rect')
     .data(bins)
     .enter()
