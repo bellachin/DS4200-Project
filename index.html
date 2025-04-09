@@ -27,7 +27,12 @@
                           <li><a href = "boxplot.html">Price By Fuel Type</a></li>
                           <li><a href = "carcount.html">Car Brand Popularity & Most Popular Model</a></li>
                           <li><a href = "barplot(D3).html">Car Price Distribution</a></li>
-                          <li><img src="Heatmap.png" alt="Heatmap" style="width:100%;"></li>
+                          <li>
+                              <button onclick="toggleHeatmap()" class="heatmap-button">Heat Map</button> 
+                              <div id="heatmap-container" style="display: none; margin-top: 10px;">
+                                  <img src="heatmap.png" alt="Heatmap" style="width: 100%; border-radius: 5px;">
+                              </div>
+                          </li>
                           <li><a href = "summary.html">Summary</a></li>
 
                         </ul>
