@@ -82,6 +82,13 @@ p {
   vertical-align: top;
 }
 
+.viz-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  margin-top: 10px;
+}
 
 .container {
   position: relative;
