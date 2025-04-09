@@ -2,130 +2,111 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unveiling Car Price Determinants</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unveiling Car Price Determinants</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="header-box">
-            <h1>Unveiling Car Price Determinants</h1>
-        </div>        
-
-        <hr>
-
-        <h4>Zetong Chen, Bella Chin, Chen-Yu Hsia, Wanrou Yang</h4>
-
-        <div class="dashboard-container">
-            <aside class="dashboard-sidebar">
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Overview</a></li>
-                        <li><a href="scatter.html">Car Year vs. Price</a></li>
-                        <li><a href="boxplot.html">Price By Fuel Type</a></li>
-                        <li><a href="carcount.html">Car Brand Popularity & Most Popular Model</a></li>
-                        <li><a href="barplot(D3).html">Car Price Distribution</a></li>
-                        <li>
-                            <button onclick="toggleHeatmap()" class="heatmap-button">Heat Map</button> 
-                            <div id="heatmap-container" class="card" style="display: none; margin-top: 10px;">
-                                <h2 style="margin-top: 0;">Heat Map</h2>
-                                <hr>
-                                <img src="heatmap.png" alt="Heatmap" style="width: 100%; border-radius: 5px;">
-                            </div>
-                        </li>
-                        
-                        <li><a href="summary.html">Summary</a></li>
-                    </ul>
-                </nav>
-            </aside>
-
-            <main class="content">
-                <section id="Overview">
-                    <div class="card">
-                        <h2>Introduction</h2>
-                        <hr>
-                        <p>
-                            Cars are more than just vehicles — they play an essential role in everyday life and the global economy. 
-                            By looking at where cars are sold, how they are used, and how they are priced, we can learn a lot about people’s needs and how economies work. 
-                            Car prices and availability tell bigger stories about the world. 
-                            They show us trends in transportation, highlight economic differences between regions, and reflect changes in technology and the environment. 
-                            For example, the popularity of certain cars in a region may reveal strong industry connections, shifts in consumer preferences, or new environmental rules. 
-                            In contrast, limited access to affordable cars might point to economic struggles or poor infrastructure.
-                            Studying this data helps us see which areas have strong, accessible car markets and which face challenges in mobility. 
-                            In a world where transportation is key to both daily life and economic growth, cars give us valuable insights into how societies develop and change. 
-                            Through this project, we hope to better understand car trends — not just where and how cars are sold, but what these patterns tell us about the world today.
-                        </p>
-                    </div>
-                </section>
-
-                <section id="Dataset">
-                    <div class="card">
-                        <h2>Dataset</h2>
-                        <hr>
-                        <p>
-                            We are working with a dataset of 10,000 cars, allowing us to explore patterns in pricing and market trends. 
-                            The dataset includes both categorical features, like Brand, Model, Fuel Type, and Transmission, and numerical features, such as Year, Engine Size, Mileage, Doors, Owner Count, and Price. 
-                            This variety helps us analyze how different factors impact car prices and consumer choices. 
-                            While we lack some details, like regional pricing or maintenance history, the dataset still provides valuable insights into the automotive market through visualizations and analysis.
-                        </p>
-                    </div>
-
-                    <div class="center">
-                        <table class="tg">
-                            <thead>
-                                <tr>
-                                    <th class="tg-0lax">Variable Name</th>
-                                    <th class="tg-0lax">Details</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td class="tg-0lax">Brand</td><td class="tg-0lax">Brand name</td></tr>
-                                <tr><td class="tg-0lax">Model</td><td class="tg-0lax">The type of model of the vehicle</td></tr>
-                                <tr><td class="tg-0lax">Year</td><td class="tg-0lax">Year the car was made</td></tr>
-                                <tr><td class="tg-0lax">Engine_Size</td><td class="tg-0lax">Size of the Engine</td></tr>
-                                <tr><td class="tg-0lax">Fuel_Type</td><td class="tg-0lax">Type of fuel that the vehicle uses</td></tr>
-                                <tr><td class="tg-0lax">Transmission</td><td class="tg-0lax">Transmission type of the vehicle</td></tr>
-                                <tr><td class="tg-0lax">Mileage</td><td class="tg-0lax">Number of Mileage the vehicle has</td></tr>
-                                <tr><td class="tg-0lax">Doors</td><td class="tg-0lax">Number of doors the vehicle has</td></tr>
-                                <tr><td class="tg-0lax">Owner_Count</td><td class="tg-0lax">Number of previous owner the vehicle has had</td></tr>
-                                <tr><td class="tg-0lax">Price</td><td class="tg-0lax">The price of the vehicle</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-
-                <section id="References">
-                    <div class="card">
-                        <h2>References</h2>
-                        <hr>
-                        <p>
-                            <em>https://www.emerald.com/insight/content/doi/10.1108/ijrdm-02-2012-0017/full/html</em><br><br>
-                            This reference investigates how consumers' socio-demographic and economic characteristics influence their decision to purchase new or used cars across different car segments in the French market. 
-                            It finds that factors such as income, education, household size, and access to credit significantly affect whether consumers opt for new or used vehicles, and which segment (small, compact, intermediate, luxury) they choose. 
-                            The research provides valuable insights into consumer behavior in a mature European car market using multinomial logit modeling.
-
-                            <br><br><em>https://www.sciencedirect.com/science/article/pii/S0967070X22002451</em><br><br>
-                            This reference analyzes consumer attitudes toward electric vehicles (EVs) with a focus on pricing and policy implications. 
-                            Using survey data from Manitoba, Canada, it applies both the van Westendorp price sensitivity method and willingness-to-pay analysis. 
-                            Findings show that most consumers are reluctant to pay substantial premiums for EVs, even when aware of long-term fuel savings. 
-                            However, consumers with direct EV experience demonstrate higher willingness to pay. 
-                            The reference suggests that consumer education, rather than solely financial incentives, is crucial to enhancing EV adoption.
-                        </p>
-                    </div>
-                </section>
-            </main>
-        </div>
+  <div class="container">
+    <div class="header-box">
+      <h1>Unveiling Car Price Determinants</h1>
     </div>
 
-    <script>
-        function toggleHeatmap() {
-            const container = document.getElementById("heatmap-container");
-            container.style.display = container.style.display === "none" ? "block" : "none";
-        }
-    </script>
+    <hr style="width:80%; text-align:center">
+    <h4>Zetong Chen, Bella Chin, Chen-Yu Hsia, Wanrou Yang</h4>
+
+    <div class="dashboard-container">
+      <aside class="dashboard-sidebar">
+        <nav>
+          <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="scatter.html">Car Year vs. Price</a></li>
+            <li><a href="boxplot.html">Price By Fuel Type</a></li>
+            <li><a href="carcount.html">Car Brand Popularity & Most Popular Model</a></li>
+            <li><a href="barplot(D3).html">Car Price Distribution</a></li>
+            <li><a href="heatmap.html">Heat Map</a></li>
+            <li><a href="summary.html">Summary</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="Overview">
+          <div class="card">
+            <h2>Introduction</h2>
+            <hr style="width:30%; text-align:center">
+            <p>
+              Cars are more than just vehicles — they play an essential role in everyday life and the global economy. 
+              By looking at where cars are sold, how they are used, and how they are priced, we can learn a lot about people’s needs and how economies work. 
+              Car prices and availability tell bigger stories about the world. They show us trends in transportation, highlight economic differences between regions, and reflect changes in technology and the environment. 
+              For example, the popularity of certain cars in a region may reveal strong industry connections, shifts in consumer preferences, or new environmental rules. 
+              In contrast, limited access to affordable cars might point to economic struggles or poor infrastructure.
+              Studying this data helps us see which areas have strong, accessible car markets and which face challenges in mobility. 
+              In a world where transportation is key to both daily life and economic growth, cars give us valuable insights into how societies develop and change. 
+              Through this project, we hope to better understand car trends — not just where and how cars are sold, but what these patterns tell us about the world today.
+            </p>
+          </div>
+        </section>
+
+        <section id="Dataset">
+          <div class="card">
+            <h2>Dataset</h2>
+            <hr style="width:30%; text-align:center">
+            <p>
+              We are working with a dataset of 10,000 cars, allowing us to explore patterns in pricing and market trends. 
+              The dataset includes both categorical features, like Brand, Model, Fuel Type, and Transmission, and numerical features, such as Year, Engine Size, Mileage, Doors, Owner Count, and Price. 
+              This variety helps us analyze how different factors impact car prices and consumer choices. 
+              While we lack some details, like regional pricing or maintenance history, the dataset still provides valuable insights into the automotive market through visualizations and analysis.
+            </p>
+          </div>
+
+          <div class="center">
+            <table class="tg">
+              <thead>
+                <tr>
+                  <th class="tg-0lax">Variable Name</th>
+                  <th class="tg-0lax">Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="tg-0lax">Brand</td><td class="tg-0lax">Brand name</td></tr>
+                <tr><td class="tg-0lax">Model</td><td class="tg-0lax">The type of model of the vehicle</td></tr>
+                <tr><td class="tg-0lax">Year</td><td class="tg-0lax">Year the car was made</td></tr>
+                <tr><td class="tg-0lax">Engine_Size</td><td class="tg-0lax">Size of the Engine</td></tr>
+                <tr><td class="tg-0lax">Fuel_Type</td><td class="tg-0lax">Type of fuel that the vehicle uses</td></tr>
+                <tr><td class="tg-0lax">Transmission</td><td class="tg-0lax">Transmission type of the vehicle</td></tr>
+                <tr><td class="tg-0lax">Mileage</td><td class="tg-0lax">Number of Mileage the vehicle has</td></tr>
+                <tr><td class="tg-0lax">Doors</td><td class="tg-0lax">Number of doors the vehicle has</td></tr>
+                <tr><td class="tg-0lax">Owner_Count</td><td class="tg-0lax">Number of previous owners the vehicle has had</td></tr>
+                <tr><td class="tg-0lax">Price</td><td class="tg-0lax">The price of the vehicle</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="References">
+          <div class="card">
+            <h2>References</h2>
+            <hr style="width:30%; text-align:center">
+            <p>
+              <em>https://www.emerald.com/insight/content/doi/10.1108/ijrdm-02-2012-0017/full/html</em><br><br>
+              This reference investigates how consumers' socio-demographic and economic characteristics influence their decision to purchase new or used cars across different car segments in the French market. 
+              It finds that factors such as income, education, household size, and access to credit significantly affect whether consumers opt for new or used vehicles, and which segment (small, compact, intermediate, luxury) they choose. 
+              The research provides valuable insights into consumer behavior in a mature European car market using multinomial logit modeling.
+
+              <br><br><em>https://www.sciencedirect.com/science/article/pii/S0967070X22002451</em><br><br>
+              This reference analyzes consumer attitudes toward electric vehicles (EVs) with a focus on pricing and policy implications. 
+              Using survey data from Manitoba, Canada, it applies both the van Westendorp price sensitivity method and willingness-to-pay analysis. 
+              Findings show that most consumers are reluctant to pay substantial premiums for EVs, even when aware of long-term fuel savings. 
+              However, consumers with direct EV experience demonstrate higher willingness to pay. 
+              The reference suggests that consumer education, rather than solely financial incentives, is crucial to enhancing EV adoption.
+            </p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
 </body>
-
 </html>
-
