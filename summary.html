@@ -39,8 +39,32 @@
                             <h2>Conclusion</h2>
                             <hr style="width:30%;text-align:center">
                             <p>
-                                Findings
-                            </p>
+                                This project revealed several key insights into car pricing:
+                                <br><br>
+
+            <ul>
+                <li>
+                    <strong>Correlation Analysis:</strong> Newer cars and larger engines tend to drive up prices, higher mileage is generally associated with lower prices.
+                     The heatmap reveals that car price positively correlates with car year (0.66) and engine size (0.36), while it has a 
+                    moderate negative correlation with mileage (-0.55). Other features such as door count and ownership history show almost no correlation with price, suggesting minimal impact.
+                </li>
+                <li>
+                    <strong>Year vs. Price Trend:</strong> From the scatter plot, we observe a clear upward trend in prices as car models get newer. Despite some noise, 
+                    the overall pattern supports the correlation with Year from the heatmap.
+                </li>
+                <li>
+                    <strong>Brand & Model Popularity:</strong> The treemap shows that brands like Ford, Honda, Chevrolet, and Audi dominate the dataset in terms of model counts. 
+                    Popular models include Fiesta, Accord, Impala, and A4, indicating strong market representation(eg. depreciate less).
+                </li>
+                <li>
+                    <strong>Price Distribution by Fuel Type:</strong> Boxplots suggest Electric cars tend to have the highest median prices, followed by Hybrid, Petrol, and Diesel. 
+                    However, all fuel types show wide price ranges, indicating variability within each group.
+                </li>
+                <li>
+                    <strong>Brand-Wise Average Price:</strong> Brands like Chevrolet and Mercedes top the list in terms of average car prices, while others such as Honda and Hyundai are more affordable on average.
+                </li>
+            </ul>
+
                         </div>
                     </section>
 
@@ -48,9 +72,20 @@
                         <div class = "card">
                             <h2>Future Work</h2>
                             <hr style="width:30%;text-align:center">
-                            <p>
-                                Future Work May consider
-                            </p>
+                            <ul>
+                                <li>
+                                    <strong>Build Predictive Models:</strong> Try regression models to predict car prices based on all features and evaluate model performance 
+                                </li>
+                                <li>
+                                    <strong>Time Series Forecasting:</strong> Use time-based models to predict future car prices or analyze how brands/fuel types evolve in popularity over time.
+                                </li>
+                                <li>
+                                    <strong>Interactive Dashboard:</strong> Turn our visualizations into an interactive dashboard, so users can filter by brand, fuel type, year, etc.
+                                </li>
+                                <li>
+                                    <strong>Geospatial Insights:</strong> If location data is available, add mapping components to analyze price variation by region or city, which could uncover useful patterns in local markets.
+                                </li>
+                            </ul>
                         </div>
                     </section>
 
