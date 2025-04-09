@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heat Map Visualization</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header-box">
+      <h1>Heat Map: Feature Correlation</h1>
+    </div>
+
+    <div class="dashboard-container">
+      <aside class="dashboard-sidebar">
+        <nav>
+          <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="scatter.html">Car Year vs. Price</a></li>
+            <li><a href="boxplot.html">Price By Fuel Type</a></li>
+            <li><a href="carcount.html">Car Brand Popularity & Most Popular Model</a></li>
+            <li><a href="barplot(D3).html">Car Price Distribution</a></li>
+            <li><a href="heatmap.html">Heat Map</a></li>
+            <li><a href="summary.html">Summary</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <div class="card">
+          <h2>Heat Map of Car Features</h2>
+          <hr style="width:30%;text-align:center">
+          <img src="heatmap.png" alt="Heat Map of Feature Correlation" style="width: 100%; border-radius: 5px;">
+          <p style="margin-top: 15px;">
+            This heat map displays the correlation coefficients between various numerical features in the car dataset. Darker shades represent stronger positive or negative relationships.
+          </p>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
