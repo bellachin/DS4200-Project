@@ -135,11 +135,20 @@ transition: color 0.3s;
   border-radius: 5px;
 }
 
-.dashboard-sidebar img {
+.heatmap-button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px;
   width: 100%;
-  height: auto;
-  display: block;
-  margin: 10px 0;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.heatmap-button:hover {
+  background-color: #e0e0e0;
 }
 
 .content {
