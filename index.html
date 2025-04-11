@@ -1,114 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unveiling Car Price Determinants</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unveiling Car Price Determinants</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
+  <body>
+    <div class="container">
+      <div class="header-box">
+        <h1>Unveiling Car Price Determinants</h1>
+      </div>
 
-<body>
-  <div class="container">
-    <div class="header-box">
-      <h1>Unveiling Car Price Determinants</h1>
+      <hr style="width: 80%; text-align: center" />
+      <h4>Zetong Chen, Bella Chin, Chen-Yu Hsia, Wanrou Yang</h4>
+
+      <div class="dashboard-container">
+        <aside class="dashboard-sidebar">
+          <nav>
+            <ul>
+              <li><a href="index.html">Overview</a></li>
+              <li><a href="heatmap.html">Heat Map</a></li>
+              <li><a href="scatter.html">Car Year vs. Price</a></li>
+              <li><a href="boxplot.html">Price By Fuel Type</a></li>
+              <li>
+                <a href="carcount.html"
+                  >Car Brand Popularity & Most Popular Model</a
+                >
+              </li>
+              <li><a href="barplot(D3).html">Car Price Distribution</a></li>
+              <li><a href="summary.html">Summary</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <main class="content">
+          <section id="Overview">
+            <div class="card">
+              <h2>Introduction</h2>
+              <hr style="width: 30%; text-align: center" />
+              <p>
+                Presently, numerous people need cars to get around without an
+                accessible transportation system nearby. Car pricing plays a
+                vital role within the automotive industry and consumers
+                worldwide. Numerous factors, including production costs, brand
+                reputation, market demand, technological aspects, economic
+                conditions, and profit margin, determine a car's price.
+                Automakers must carefully balance affordability, profitability,
+                and competitiveness when setting car prices. At the same time,
+                consumers navigate pricing strategies such as discounts,
+                financing options, and depreciation rates to make informed
+                purchasing decisions. Car pricing is important because it
+                affects accessibility and affordability to vehicles, influencing
+                how individuals and families choose vehicles to meet their needs
+                and budgets. Additionally, car pricing trends can provide
+                insights into shifts in consumer preferences, innovation,
+                environmental considerations, and global market fluctuations,
+                which makes this dataset an intriguing subject for analysis and
+                discussion.
+              </p>
+            </div>
+          </section>
+
+          <section id="Dataset">
+            <div class="card">
+              <h2>Dataset</h2>
+              <hr style="width: 30%; text-align: center" />
+              <p>
+                We have selected an existing dataset from Kaggle that contains
+                10,000 observations and 10 features, allowing us to explore
+                patterns in pricing and market trends. The dataset includes both
+                categorical features, like Brand, Model, Fuel Type, and
+                Transmission, and numerical features, such as Year, Engine Size,
+                Mileage, Doors, Owner Count, and Price. This variety helps us
+                analyze car market price prediction. There are key numerical
+                variables, such as Engine Size and Mileage, that can help
+                estimate vehicle prices or cost. Additionally, some categorical
+                features like Fuel Type and Transmission provide insights into
+                customer preferences and market trends. While we lack some
+                details, like regional pricing or maintenance history, the
+                dataset still provides valuable insights into the automotive
+                market.
+              </p>
+            </div>
+
+            <div class="center">
+              <table class="tg">
+                <thead>
+                  <tr>
+                    <th class="tg-0lax">Variable Name</th>
+                    <th class="tg-0lax">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tg-0lax">Brand</td>
+                    <td class="tg-0lax">Brand name</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">Model</td>
+                    <td class="tg-0lax">The type of model of the vehicle</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">Year</td>
+                    <td class="tg-0lax">Year the car was made</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">Engine_Size</td>
+                    <td class="tg-0lax">Size of the Engine</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">Fuel_Type</td>
+                    <td class="tg-0lax">Type of fuel that the vehicle uses</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">Transmission</td>
+                    <td class="tg-0lax">Transmission type of the vehicle</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">Mileage</td>
+                    <td class="tg-0lax">Number of Mileage the vehicle has</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">Doors</td>
+                    <td class="tg-0lax">Number of doors the vehicle has</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">Owner_Count</td>
+                    <td class="tg-0lax">
+                      Number of previous owners the vehicle has had
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0lax">Price</td>
+                    <td class="tg-0lax">The price of the vehicle</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="References">
+            <div class="card">
+              <h2>References</h2>
+              <hr style="width: 30%; text-align: center" />
+              <p>
+                <em
+                  >https://medium.com/@drivingtrendyfashions/7-key-factors-that-influence-used-car-prices7-key-factors-that-influence-used-car-prices-2650ae3dfb8a</em
+                ><br /><br />
+                This reference shows factors that people usually do not realize
+                are also related to the price of second-hand cars. The seven key
+                factors influencing used car prices are as follows: 1. Age and
+                Mileage of the Vehicle 2. Make and Model of the Vehicle 3.
+                Condition of the Car 4. Market Demand and Economic Conditions 5.
+                Vehicle History Report 6. Location and Geographic Factors 7.
+                Technological Features and Upgrades. There are two things that I
+                want to point out; the technological features here are not only
+                about the entertainment features in the car but also about the
+                car as a whole. As technology is more advanced day by day,
+                electric vehicles (EVs) and hybrids, these types of cars are
+                holding their value better than traditional gasoline-powered
+                cars. Other than that, economic conditions and trends are also a
+                hidden factor. During a recession or economic downturn, people
+                are less likely to buy new cars, which increases the demand for
+                used cars. In the past few weeks, there has been a new tariff
+                targeting imported materials and cars, which will significantly
+                influence the car market in the future.
+
+                <br /><br /><em
+                  >https://www.sciencedirect.com/science/article/pii/S0967070X22002451</em
+                ><br /><br />
+                This reference analyzes consumer attitudes toward electric
+                vehicles (EVs) with a focus on pricing and policy implications.
+                Using survey data from Manitoba, Canada, it applies both the van
+                Westendorp price sensitivity method and willingness-to-pay
+                analysis. Findings show that most consumers are reluctant to pay
+                substantial premiums for EVs, even when aware of long-term fuel
+                savings. However, consumers with direct EV experience
+                demonstrate higher willingness to pay. The reference suggests
+                that consumer education, rather than solely financial
+                incentives, is crucial to enhancing EV adoption.
+              </p>
+            </div>
+          </section>
+        </main>
+      </div>
     </div>
-
-    <hr style="width:80%; text-align:center">
-    <h4>Zetong Chen, Bella Chin, Chen-Yu Hsia, Wanrou Yang</h4>
-
-    <div class="dashboard-container">
-      <aside class="dashboard-sidebar">
-        <nav>
-          <ul>
-            <li><a href="index.html">Overview</a></li>
-            <li><a href="scatter.html">Car Year vs. Price</a></li>
-            <li><a href="boxplot.html">Price By Fuel Type</a></li>
-            <li><a href="carcount.html">Car Brand Popularity & Most Popular Model</a></li>
-            <li><a href="barplot(D3).html">Car Price Distribution</a></li>
-            <li><a href="heatmap.html">Heat Map</a></li>
-            <li><a href="summary.html">Summary</a></li>
-          </ul>
-        </nav>
-      </aside>
-
-      <main class="content">
-        <section id="Overview">
-          <div class="card">
-            <h2>Introduction</h2>
-            <hr style="width:30%; text-align:center">
-            <p>
-              Presently, numerous people need cars to get around without an accessible transportation system nearby. 
-              Car pricing plays a vital role within the automotive industry and consumers worldwide. 
-              Numerous factors, including production costs, brand reputation, market demand, technological aspects, economic conditions, and profit margin, determine a car's price. 
-              Automakers must carefully balance affordability, profitability, and competitiveness when setting car prices. 
-              At the same time, consumers navigate pricing strategies such as discounts, financing options, and depreciation rates to make informed purchasing decisions. 
-              Car pricing is important because it affects accessibility and affordability to vehicles, influencing how individuals and families choose vehicles to meet their needs and budgets. 
-              Additionally, car pricing trends can provide insights into shifts in consumer preferences, innovation, environmental considerations, and global market fluctuations, which makes this dataset an intriguing subject for analysis and discussion.
-            </p>
-          </div>
-        </section>
-
-        <section id="Dataset">
-          <div class="card">
-            <h2>Dataset</h2>
-            <hr style="width:30%; text-align:center">
-            <p>
-              We have selected an existing dataset from Kaggle that contains 10,000 observations and 10 features, allowing us to explore patterns in pricing and market trends. 
-              The dataset includes both categorical features, like Brand, Model, Fuel Type, and Transmission, and numerical features, such as Year, Engine Size, Mileage, Doors, Owner Count, and Price. 
-              This variety helps us analyze car market price prediction. There are key numerical variables, such as Engine Size and Mileage, that can help estimate vehicle prices or cost. Additionally, some categorical features like Fuel Type and Transmission provide insights into customer preferences and market trends.  
-              While we lack some details, like regional pricing or maintenance history, the dataset still provides valuable insights into the automotive market.
-            </p>
-          </div>
-
-          <div class="center">
-            <table class="tg">
-              <thead>
-                <tr>
-                  <th class="tg-0lax">Variable Name</th>
-                  <th class="tg-0lax">Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td class="tg-0lax">Brand</td><td class="tg-0lax">Brand name</td></tr>
-                <tr><td class="tg-0lax">Model</td><td class="tg-0lax">The type of model of the vehicle</td></tr>
-                <tr><td class="tg-0lax">Year</td><td class="tg-0lax">Year the car was made</td></tr>
-                <tr><td class="tg-0lax">Engine_Size</td><td class="tg-0lax">Size of the Engine</td></tr>
-                <tr><td class="tg-0lax">Fuel_Type</td><td class="tg-0lax">Type of fuel that the vehicle uses</td></tr>
-                <tr><td class="tg-0lax">Transmission</td><td class="tg-0lax">Transmission type of the vehicle</td></tr>
-                <tr><td class="tg-0lax">Mileage</td><td class="tg-0lax">Number of Mileage the vehicle has</td></tr>
-                <tr><td class="tg-0lax">Doors</td><td class="tg-0lax">Number of doors the vehicle has</td></tr>
-                <tr><td class="tg-0lax">Owner_Count</td><td class="tg-0lax">Number of previous owners the vehicle has had</td></tr>
-                <tr><td class="tg-0lax">Price</td><td class="tg-0lax">The price of the vehicle</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section id="References">
-          <div class="card">
-            <h2>References</h2>
-            <hr style="width:30%; text-align:center">
-            <p>
-              <em>https://medium.com/@drivingtrendyfashions/7-key-factors-that-influence-used-car-prices7-key-factors-that-influence-used-car-prices-2650ae3dfb8a</em><br><br>
-              This reference shows factors that people usually do not realize are also related to the price of second-hand cars. 
-              The seven key factors influencing used car prices are as follows: 1. Age and Mileage of the Vehicle 2. Make and Model of the Vehicle 3. 
-              Condition of the Car 4. Market Demand and Economic Conditions 5. Vehicle History Report 6. Location and Geographic Factors 7. Technological Features and Upgrades. 
-              There are two things that I want to point out; the technological features here are not only about the entertainment features in the car but also about the car as a whole. 
-              As technology is more advanced day by day, electric vehicles (EVs) and hybrids, these types of cars are holding their value better than traditional gasoline-powered cars. 
-              Other than that,  economic conditions and trends are also a hidden factor. During a recession or economic downturn, people are less likely to buy new cars, which increases the demand for used cars. In the past few weeks, there has been a new tariff targeting imported materials and cars, which will significantly influence the car market in the future.
-
-              <br><br><em>https://www.sciencedirect.com/science/article/pii/S0967070X22002451</em><br><br>
-              This reference analyzes consumer attitudes toward electric vehicles (EVs) with a focus on pricing and policy implications. 
-              Using survey data from Manitoba, Canada, it applies both the van Westendorp price sensitivity method and willingness-to-pay analysis. 
-              Findings show that most consumers are reluctant to pay substantial premiums for EVs, even when aware of long-term fuel savings. 
-              However, consumers with direct EV experience demonstrate higher willingness to pay. 
-              The reference suggests that consumer education, rather than solely financial incentives, is crucial to enhancing EV adoption.
-            </p>
-          </div>
-        </section>
-      </main>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
