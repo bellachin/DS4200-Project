@@ -11,7 +11,7 @@ let svg = d3.select('#bar-chart')
   .append('svg')
   .attr('width', width)
   .attr('height', height)
-  .style('background', 'lightyellow');
+  .style('background', 'white');
 
 d3.csv("car_price_dataset.csv").then(raw => {
   console.log("CSV Sample Row:", raw[0]);
