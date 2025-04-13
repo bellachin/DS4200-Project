@@ -95,8 +95,8 @@ d3.csv("car_price_dataset.csv").then(raw => {
     // Group data by Brand and compute average Price for each Brand
     let brandData = d3.rollups(
       filteredData,
-      v => d3.mean(v, d => +d.Price),  // Use "Price" column here
-      d => d.Brand                   // Use "Brand" column
+      v => d3.mean(v, d => +d.Price), 
+      d => d.Brand                  
     ).map(([brand, avgPrice]) => ({ brand, avgPrice }));
   
     // Remove the existing linked bar chart (if any) to update cleanly
