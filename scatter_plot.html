@@ -3,9 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Car Price Distribution</title>
+    <title>Car Year vs. Price Scatter Plot</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      /* Optional inline styles specific for the scatter plot card */
+      #scatter-plot svg {
+        background: white;
+      }
+      label {
+        font-size: 1.2em;
+        margin-right: 10px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -24,15 +34,16 @@
               <li><a href="barplot(D3).html">Car Price Distribution</a></li>
               <li><a href="heatmap.html">Heat Map</a></li>
               <li>
-                <a href="scatter_plot.html">Price vs. mileage and engine size</a></li>
-              <li><a href="scatter.html">Car Year vs. Price</a></li>
+                <a href="scatter_plot.html"
+                  >Price vs. mileage and engine size</a
+                >
+              </li>
               <li><a href="boxplot.html">Price By Fuel Type</a></li>
               <li>
                 <a href="carcount.html"
-                  >Car Brand Popularity & Most Popular Model</a
+                  >Car Brand Popularity &amp; Most Popular Model</a
                 >
               </li>
-
               <li><a href="summary.html">Summary</a></li>
             </ul>
           </nav>
@@ -40,24 +51,25 @@
 
         <main class="content">
           <div class="card">
-            <h2>Bar Chart of Car Prices(clickable)</h2>
+            <h2>Scatter Plot: Price vs. Selected Feature</h2>
             <hr style="width: 20%; text-align: center" />
-            <div id="bar-chart"></div>
-            <div id="linked-bar-chart" style="display: flex; justify-content: center; align-items: center; margin: 10px auto;"></div>
+            <label for="featureSelect">Choose a Feature:</label>
+            <select id="featureSelect">
+              <option value="Mileage">Mileage</option>
+              <option value="Engine_Size">Engine Size</option>
+            </select>
+            <div id="scatter-plot"></div>
           </div>
 
           <section>
             <div class="card">
               <p>
-                The linked bar chart below the histogram provides deeper insight
-                by showing the average price per brand within each selected
-                price range. While the histogram reveals how many cars fall into
-                each price bin, this chart helps identify which brands dominate
-                or differ in pricing within that same range. This comparison
-                allows viewers to spot brands that offer greater value or carry
-                premium pricing even among similarly priced vehicles. It adds an
-                extra layer of analysis for both consumers and market analysts
-                exploring brand-level pricing trends.
+                This scatter plot allows you to explore the relationship between
+                Price and a selected feature(Mileage or Engine size). Use the
+                dropdown menu above to switch between Mileage and Engine Size on
+                the x‑axis. The plot dynamically updates based on your selection
+                and extends story from heatmap, giving you a clear visual
+                insight into how each factor correlates with Price.
               </p>
             </div>
           </section>
@@ -65,6 +77,6 @@
       </div>
     </div>
 
-    <script src="main(barplot_d3).js"></script>
+    <script src="scatter.js"></script>
   </body>
 </html>
