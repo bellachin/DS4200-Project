@@ -129,6 +129,21 @@ d3.csv("car_price_dataset.csv").then(raw => {
     svg2.append('g')
       .attr("transform", `translate(0, ${height2 - margin2.bottom})`)
       .call(d3.axisBottom(xScale2));
+
+      svg2.append('text')
+      .text('Car Brand')
+      .attr('x', width / 2)
+      .attr('y', height - 10)
+      .attr('text-anchor', 'middle')
+      .style('font-weight', 'bold');
+  
+    svg2.append('text')
+      .text('Car Price')
+      .attr('x', -height / 2)
+      .attr('y', 20)
+      .attr('transform', 'rotate(-90)')
+      .attr('text-anchor', 'middle')
+      .style('font-weight', 'bold');
   
     // Draw bars representing the average Price by Brand
     svg2.selectAll("rect")
